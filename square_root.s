@@ -1,0 +1,23 @@
+	AREA code_area, CODE, READONLY
+	EXPORT sqrt
+		
+sqrt
+	LDR R0,= 0xD25EC052
+	LDR R1,= 0X0
+	LDR R2,= 0x00008000
+	LDR R3,= 0xFFFF7FFF
+	MOVS R4, #16
+loop
+	ORRS R1, R2
+	MOVS R5, R1
+	MULS R5, R5, R5
+	CMP R5, R0
+	BLS skip
+	ANDS R1, R3
+skip
+	LSRS R2, #1
+	ASRS R3, #1
+	SUBS R4, #1
+	BNE loop
+here B here
+	END

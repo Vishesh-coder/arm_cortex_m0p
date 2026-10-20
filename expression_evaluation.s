@@ -1,0 +1,30 @@
+	; to evaluate a^2+52b-2ab
+	
+	AREA code_area,CODE,READONLY
+	EXPORT eval
+
+eval
+	LDR R1,=0x52
+	LDR R2,=0xA52
+	MOVS R4,#0
+	MOVS R5,#0
+	MOVS R6,#0
+	MOVS R7,#52
+	MOVS R3,#2
+
+	MOVS R4,R1
+	MULS R4,R1,R4
+
+	MOVS R5,R2
+	MULS R5,R7,R5
+
+	MULS R2,R1,R2
+	MULS R2,R3,R2
+
+	ADDS R1,R5,R4
+	SUBS R6,R1,R2
+
+	MOVS R3,R6
+
+here B here
+	END
