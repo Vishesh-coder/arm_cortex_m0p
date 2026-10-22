@@ -1,12 +1,12 @@
 	AREA code_area, CODE, READONLY
-	EXPORT assign
+	EXPORT bintobcd
 		
-assign
-	LDR R0,= 0x052; ;binary number
-	LDR R1,= 0x0; ;temp
-	LDR R2,= 0x0; ;hundreds
-	LDR R3,= 0x0; ;tens
-	LDR R4,= 0x0; ;ones
+bintobcd
+	LDR R0,= 0x052 ;binary number
+	LDR R1,= 0x0 ;temp
+	LDR R2,= 0x0 ;hundreds
+	LDR R3,= 0x0 ;tens
+	LDR R4,= 0x0 ;ones
 	
 	MOVS R1, R0;
 loophunds
@@ -32,5 +32,3 @@ loopones
 	
 here B here
 	END
-	
-	
