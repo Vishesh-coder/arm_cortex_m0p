@@ -8,7 +8,7 @@ bintobcd
 	LDR R3,= 0x0 ;tens
 	LDR R4,= 0x0 ;ones
 	
-	MOVS R1, R0;
+	MOVS R1, R0
 loophunds
 	CMP R1, #100
 	BLO looptens
